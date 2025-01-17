@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import currencyStore from "../../state/store";
 import  { useNavigate } from "react-router-dom";
 import Pageloader from "..Components/Pageloader/Pageloader";
+// import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 // import { LazyResult } from "postcss";
 
 function CoinTable(){
