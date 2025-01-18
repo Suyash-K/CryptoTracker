@@ -1,6 +1,7 @@
 // import { defineConfig } from "vite";
 // import { CurrencyContext } from "../../context/CurrencyContext";
 // import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import currencyStore from "../../state/store";
 
 function Navbar(){

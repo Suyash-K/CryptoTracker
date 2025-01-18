@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import { fetchCoinData } from "../../Services/fetchCoinData";
+import { useState } from "react";
+import { fetchCoinData } from "../../services/fetchCoinData";
 import { useQuery } from "react-query";
 // import { CurrencyContext } from "../../context/CurrencyContext";
-import currencyStore from "../../state/store";
-import  { useNavigate } from "react-router-dom";
-import Pageloader from "..Components/Pageloader/Pageloader";
-// import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-// import { LazyResult } from "postcss";
+import currencyStore from '../../state/store';
+import { useNavigate } from "react-router-dom";
+import PageLoader from "../../Components/PageLoader/PageLoader";
+
 
 function CoinTable(){
 
@@ -42,7 +41,7 @@ function CoinTable(){
     }
 
     if(isLoading){
-        return <Pageloader/>
+        return <PageLoader/>
     }
 
     return (

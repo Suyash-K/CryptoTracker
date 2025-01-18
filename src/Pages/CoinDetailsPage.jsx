@@ -1,16 +1,14 @@
 import { useParams } from "react-router-dom";
-// import parse from 'html-react-parser';
-// import PageLoader from "../components/PageLoader/PageLoader";
-// import CoinInfoContainer from "../components/CoinInfo/CoinInfoContainer";
-// import useFetchCoin from "../hooks/useFetchCoin";
+import parse from 'html-react-parser';
+import PageLoader from "../Components/PageLoader/PageLoader";
+import CoinInfoContainer from "../Components/CoinInfo/CoinInfoContainer";
+import useFetchCoin from "../hooks/useFetchCoin";
 
 
 function CoinDetailsPage() {
-
     const { coinId } = useParams();
-
-    const { isLoading, isError, coin, currency } = useFetchCoin(coinId);
-
+    const { isError, isLoading, coin, currency } = useFetchCoin(coinId);
+    
     if(isLoading) {
         return <PageLoader />
     }

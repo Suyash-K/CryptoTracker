@@ -3,9 +3,10 @@ import Banner from "../Components/Banner/Banner";
 import CoinTable from "../Components/CoinTable/CoinTable";
 
 function Home() {
+  console.log("Home component rendered"); // Debug mounting
   return (
     <>
-      <Navbar />
+      
       <Banner/>
       <CoinTable />
       

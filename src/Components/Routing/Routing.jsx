@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../../Pages/Home";
-import CoinDetailsPage from "../../Pages/CoinDetailsPage";
 import {lazy, Suspense} from "react";
 import MainLayout from "../../Pages/Layout";
-import PageLoader from "../components/PageLoader/PageLoader";
+import PageLoader from "../PageLoader/PageLoader"; // Fix path casing
 import CustomErrorBoundary from "../ErrorBoundary/CustomErrorBoundary";
 
 
-const Home = lazy(()=>import("../../Pages/Home"));
-const CoinDetailsPage = lazy(()=>import("../../Pages/CoinDetailsPage"));
+
+// const Home = lazy( () => import("../../Pages/Home"));
+const Home = lazy(() => import('../../Pages/Home'));
+const CoinDetailsPage = lazy( () => import("../../Pages/CoinDetailsPage"));
 
 function Routing(){
     return(
@@ -17,7 +17,7 @@ function Routing(){
             <Route path="/" element={<MainLayout/>}>
                     <Route index element={
 
-                        <Suspense fallback={PageLoader}>
+                        <Suspense fallback={<PageLoader/>}>
                             <Home/>
                         </Suspense>
 
@@ -25,7 +25,7 @@ function Routing(){
 
                     <Route path="/details/:coinId" element={
                         
-                        <Suspense fallback={PageLoader}>
+                        <Suspense fallback={<PageLoader/>}>
                             <CoinDetailsPage/>
                         </Suspense>
 
