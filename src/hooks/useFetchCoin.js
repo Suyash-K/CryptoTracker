@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { fetchCoinDetails } from "../services/fetchCoinDetails";
+import { fetchCoinDetails } from "../Services/fetchCoinDetails";
 import currencyStore from '../state/store';
 function useFetchCoin(coinId) {
     
